@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #app{
+            width: 400px;
+            height: 650px;
+            /* background: palegoldenrod; */
+        }
+        h2{
+            width: 399px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background: #1FC8A1;
+        }
+        .tit li{
+            width: 113px;
+            height: 50px;
+            line-height: 50px;
+            float: left;
+            text-align: center;
+            list-style: none;
+            background: plum;
+            padding: 0 10px;
+        }
+        .position,.search,.my{
+            width: 397px;
+            height: 550px;
+            border: 1px solid #ccc;
+            background: #fff;
+        }
+        .top{
+            width: 397px;
+            height: 550px;
+            overflow: auto;
+            /* background: #f0f; */
+        }
+        .top li{
+            width: 358px;
+            height: 66px;
+            padding: 10px;
+            padding-top: 12px;
+            /* background: powderblue; */
+            border-top: 1px solid #ccc;
+        }
+        .top li span{
+            display: block;
+            width: 260px;
+            height: 30px;
+            line-height: 30px;
+            /* background: pink; */
+            margin-left: 50px;
+        }
+        .top li b{
+            float: left;
+            width: 250px;
+            height: 30px;
+            line-height: 30px;
+            font-weight: normal;
+            font-size: 12px;
+            /* background: peru; */
+            margin-left: 50px;
+        }
+        .top li strong{
+            float: right;
+            width: 80px;
+            height: 30px;
+            text-align: right;
+            line-height: 30px;
+            font-weight: normal;
+            color: green;
+            /* background: plum; */
+            margin-top: -10px;
+        }
+        .top p span{
+            float: left;
+            width: 100px;
+            height: 49px;
+            line-height: 50px;
+            text-align: center;
+            background: #fff;
+            border-bottom: 1px solid #ccc;
+        }
+        .top p input{
+            width: 285px;
+            height: 48px;
+            border: 1px solid #ccc;
+            padding-left: 10px;
+            font-size: 16px;
+        }
+        .top .login{
+            width: 120px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border: 0;
+            color: #fff;
+            background: #1FC8A1;
+            font-size: 14px;
+            margin: 80px 0 50px 140px;
+        }
+        .top ul li{
+            float: left;
+            width: 150px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            color: #fff;
+            background: #1FC8A1;
+            list-style: none;
+            margin: 20px 0 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h2>拉勾网</h2>
+
+        <component :is="getTab"></component>
+
+        <ul class="tit">
+            <li v-for="item in msg" @click="handleClick(item)">{{item.title}}</li>
+        </ul>
+    </div>
+
+    <script>
+
+        Vue.component("custom-position",{
+            data(){
+                return{
+                    list:[
+                        {"id":1,"title":"赢时胜软件","small":"核算会计(上海)[上海]","price":"4k-6k"},
+                        {"id":2,"title":"四川驰驭行汽车租赁","small":"客户经理[成都]","price":"15k-30k"},
+                        {"id":3,"title":"Trusfort芯盾时代","small":"大数据解决方案专家[北京]","price":"15k-30k"},
+                        {"id":4,"title":"Trusfort芯盾时代","small":"项目经理[北京]","price":"15k-30k"},
+                        {"id":5,"title":"洋码头","small":"活动运营策划[上海]","price":"7k-12k"},
+                        {"id":6,"title":"Xeno Dynamics","small":"产品结构工程师[深圳]","price":"12k-20k"},
+                        {"id":6,"title":"Xeno Dynamics","small":"产品结构工程师[深圳]","price":"12k-20k"},
+                        {"id":6,"title":"Xeno Dynamics","small":"产品结构工程师[深圳]","price":"12k-20k"},
+                        {"id":6,"title":"Xeno Dynamics","small":"产品结构工程师[深圳]","price":"12k-20k"}
+                    ]
+                }
+            },
+            template:`
+            <div class="position">
+                <ul class="top">
+                    <li v-for="items in list">
+                        <span>{{items.title}}</span>
+                        <b>{{items.small}}</b>
+                        <strong>{{items.price}}</strong>
+                    </li>
+                </ul>
+            </div>
+            `
+        });
+
+        Vue.component("custom-search",{
+            template:`
+            <div class="search">
+                <div class="top">
+                    <p>
+                        <span>全国</span>
+                        <input type="text" placeholder="搜索职位或公司">
+                    </p>
+                </div>
+            </div>
+            `
+        });
+
+        Vue.component("custom-my",{
+            template:`
+            <div class="my">
+                <div class="top">
+                    <button class="login">登录 / 注册</button>
+                    <ul>
+                        <li>投递</li>
+                        <li>面试</li>
+                        <li>邀约</li>
+                        <li>收藏</li>
+                    </ul>
+                </div>
+            </div>
+            `
+        })
+
+        const vm=new Vue({
+            el:"#app",
+            data:{
+                msg:[
+                    {"id":"position","title":"职位"},
+                    {"id":"search","title":"搜索"},
+                    {"id":"my","title":"我的"}
+                ],
+                current:"position"
+            },
+            computed:{
+                getTab(){
+                    return "custom-"+this.current;
+                }
+            },
+            methods:{
+                handleClick(item){
+                    this.current=item.id
+                }
+            }
+        })
+    </script>
+</body>
+</html>
