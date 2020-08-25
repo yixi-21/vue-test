@@ -6,118 +6,132 @@
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <style>
-        *{
+         * {
             padding: 0;
             margin: 0;
         }
-        #app{
-            width: 400px;
-            height: 650px;
-            /* background: palegoldenrod; */
+        html {
+            font-size: 26.6666667vw;
         }
-        h2{
-            width: 399px;
-            height: 50px;
-            line-height: 50px;
-            text-align: center;
-            background: #1FC8A1;
+        body {
+            font-size: .16rem;
         }
-        .tit li{
-            width: 113px;
-            height: 50px;
-            line-height: 50px;
-            float: left;
-            text-align: center;
+        ul {
             list-style: none;
-            background: plum;
-            padding: 0 10px;
         }
-        .position,.search,.my{
-            width: 397px;
-            height: 550px;
-            border: 1px solid #ccc;
+        a {
+            text-decoration: none;
+            color: #555555;
+        }
+        h2 {
+            height: 0.45rem;
+            background: #00b38a;
+            font-size: 0.18rem;
+            text-align: center;
+            line-height: 0.45rem;
+            color: white;
+        }
+        .position,.search,.my {
+            height: 5.5rem;
+            border: 0.01rem solid #ccc;
             background: #fff;
         }
-        .top{
-            width: 397px;
-            height: 550px;
+        .top {
+
+            height: 5.5rem;
             overflow: auto;
             /* background: #f0f; */
         }
-        .top li{
-            width: 358px;
-            height: 66px;
-            padding: 10px;
-            padding-top: 12px;
+        .top li {
+
+            height: 0.66rem;
+            padding: 0.1rem;
+            padding-top: 0.12rem;
             /* background: powderblue; */
-            border-top: 1px solid #ccc;
+            border-top: 0.01rem solid #ccc;
         }
-        .top li span{
+        .top li span {
             display: block;
-            width: 260px;
-            height: 30px;
-            line-height: 30px;
+
+            height: 0.3rem;
+            line-height: 0.3rem;
             /* background: pink; */
-            margin-left: 50px;
+            margin-left: 0.5rem;
         }
-        .top li b{
+        .top li b {
             float: left;
-            width: 250px;
-            height: 30px;
-            line-height: 30px;
+
+            height: 0.3rem;
+            line-height: 0.3rem;
             font-weight: normal;
-            font-size: 12px;
+            font-size: 0.12rem;
             /* background: peru; */
-            margin-left: 50px;
+            margin-left: 0.5rem;
         }
-        .top li strong{
+        .top li strong {
             float: right;
-            width: 80px;
-            height: 30px;
+
+            height: 0.3rem;
             text-align: right;
-            line-height: 30px;
+            line-height: 0.3rem;
             font-weight: normal;
             color: green;
             /* background: plum; */
-            margin-top: -10px;
+            margin-top: -0.1rem;
         }
-        .top p span{
+        .top p span {
             float: left;
-            width: 100px;
-            height: 49px;
-            line-height: 50px;
+            width: 0.7rem;
+            height: 0.49rem;
+            line-height: 0.5rem;
             text-align: center;
             background: #fff;
-            border-bottom: 1px solid #ccc;
+            border-bottom: 0.01rem solid #ccc;
         }
-        .top p input{
-            width: 285px;
-            height: 48px;
-            border: 1px solid #ccc;
-            padding-left: 10px;
-            font-size: 16px;
+        .top p input {
+            width: 2.85rem;
+            height: 0.48rem;
+            border: 0.01rem solid #ccc;
+            padding-left: 0.1rem;
+            font-size: 0.16rem;
         }
-        .top .login{
-            width: 120px;
-            height: 50px;
-            line-height: 50px;
+        .top .login {
+            width: 1.5rem;
+            height: 0.5rem;
+            line-height: 0.5rem;
             text-align: center;
             border: 0;
             color: #fff;
             background: #1FC8A1;
-            font-size: 14px;
-            margin: 80px 0 50px 140px;
+            font-size: 0.14rem;
+            margin: 0.8rem 0 0.5rem 1.2rem;
         }
-        .top ul li{
+        .top ul li {
             float: left;
-            width: 150px;
-            height: 70px;
-            line-height: 70px;
+            width: 1.2rem;
+            height: 0.7rem;
+            line-height: 0.7rem;
             text-align: center;
             color: #fff;
             background: #1FC8A1;
             list-style: none;
-            margin: 20px 0 0 20px;
+            margin: 0.2rem 0 0 0.3rem;
+        }
+        .tit {
+            width: 100%;
+            height: 0.45rem;
+            border-top: 0.01rem #e8e8e8 solid;
+            position: fixed;
+            bottom: 0;
+            background: #f6f6f6;
+            display: flex;
+            line-height: 0.45rem;
+        }
+        .tit li {
+            flex: 1;
+            text-align: center;
+            height: 100%;
+            color: #555555;
         }
     </style>
 </head>
